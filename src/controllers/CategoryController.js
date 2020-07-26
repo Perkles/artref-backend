@@ -2,14 +2,14 @@ const connection = require('../database/connection');
 module.exports = {
     
     async index(request, response){
-        const authors = await connection('author').select('*');
-        return response.json(authors);
+        const category = await connection('category').select('*');
+        return response.json(category);
     },
     
     async create(request, response){
         const {name} = request.body;
     
-        await connection('author').insert({
+        await connection('category').insert({
             name,
         });
     
