@@ -13,7 +13,7 @@ exports.up = function(knex) {
         table.foreign('author_id').references('id').inTable('author');
 
         
-        table.timestamp(true);
+        table.timestamps(true, true);
     });
 };
 

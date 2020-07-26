@@ -1,8 +1,8 @@
 const express = require('express');
+const AuthorController = require('./controllers/AuthorController');
 const routes = express.Router();
 
-routes.get('/', function(request, response){
-    return response.send("liruliru");
-});
+routes.get('/author', AuthorController.index);
+routes.post('/author/create', AuthorController.create);
 
 module.exports = routes;
